@@ -34,7 +34,7 @@
     // document.querySelectorAll('div.square')[0].innerText;
     //above lets you get the content of the div. it's "" for an empty box
     var turnNum = 1;
-    var turnValue;
+    var turnValue="X";
     var turnXO =function(turnNum) {
 
         if (turnNum%2 === 1) {
@@ -46,12 +46,15 @@
           console.log("O");
         }
     }
+    // var elm = document.getElementById("div1");
+    //
+    // if (elm.className === "fixed") {
+    //   // skip a particular class of element
+    //   goNextElement();
+    // } see if this can be used on a played element
 
-    turnXO(3);
-    var cellsQueryAll = window.document.querySelectorAll('div.square');
-    var cell1 = window.document.querySelectorAll('div.square')[0];
+    //var cell1 = window.document.querySelectorAll('div.square')[0];
 
-    turnXO(3);
     var cellsQueryAll = window.document.querySelectorAll('div.square');
     // function getText(cellNumber) = window.document.querySelectorAll('div.square')[cellNumber].innerText;
     //does the above even work?

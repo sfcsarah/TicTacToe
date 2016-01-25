@@ -2,6 +2,9 @@ h1 {
   font-size: 60px;
   color:blue;
 }
+h2 {
+  color:red;
+}
 div {
   display:inline-block;
   position:relative;
