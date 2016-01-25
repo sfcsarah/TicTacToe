@@ -1,0 +1,25 @@
+h1 {
+  font-size: 60px;
+  color:blue;
+}
+div {
+  display:inline-block;
+  position:relative;
+  padding:0;
+  margin:0;
+  float:left;
+  min-width:60px;
+  min-height:60px;
+  border: 6px solid black;
+  padding:0;
+}
+.square {
+  font-size: 55px;
+  text-align: center;
+}
+#cell4 {
+  clear:left;
+}
+#cell7 {
+  clear:left;
+}

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Tic Tac Toe</title>
+    <link rel="stylesheet" href="./css/ticStyle.css">
+    <script type="text/javascript" src="js/ticScript.js"> </script>
+  </head>
+  <body>
+    <h1>Tic Tac Toe! by Sarah Fouzia Choudhury</h1>
+    <h2>Player X goes first</h1>
+    <div>
+      <div id="cell1" class="square"></div>
+      <div id="cell2" class="square"></div>
+      <div id="cell3" class="square"></div>
+      <div id="cell4" class="square"></div>
+      <div id="cell5" class="square"></div>
+      <div id="cell6" class="square"></div>
+      <div id="cell7" class="square"></div>
+      <div id="cell8" class="square"></div>
+      <div id="cell9" class="square"></div>
+    </div>
+
+    <script>
+    // remember, with the DOM, these query selectors must be in the html document
+    // they can't be part of an external javascript file as it is not part of the
+    // window.document
+    window.alert("HTML file scripts loading!");
+    console.log("HTML script console works!");
+    var cellIDList = ["cell1","cell2","cell3","cell4","cell5","cell6","cell7","cell8","cell9"]
+
+    // document.querySelectorAll('div.square')[0].innerText;
+    //above lets you get the content of the div. it's "" for an empty box
+    var turnNum = 1;
+    var turnValue;
+    var turnXO =function(turnNum) {
+
+        if (turnNum%2 === 1) {
+          turnValue='X';
+          console.log("X");
+        }
+        else {
+          turnValue='0';
+          console.log("O");
+        }
+    }
+
+    turnXO(3);
+    var cellsQueryAll = window.document.querySelectorAll('div.square');
+    var cell1 = window.document.querySelectorAll('div.square')[0];
+
+    turnXO(3);
+    var cellsQueryAll = window.document.querySelectorAll('div.square');
+    // function getText(cellNumber) = window.document.querySelectorAll('div.square')[cellNumber].innerText;
+    //does the above even work?
+
+    for (i=0; i<cellsQueryAll.length; i+=1) {
+      cellsQueryAll[i].addEventListener('click', function() {
+        this.innerText= turnValue;
+        //why does turnXO(turnNum) not work above?
+        this.style.background="blue";
+        turnNum +=1;
+
+        //you can't use cellsQueryAll[i] instead of 'this'
+        //because the loop will keep on running and output the last value,
+        // which is 9 here.
+        //you also can't use a break here either.
+      })
+    }
+    function winCondition() {
+      //what parameters go here?
+      if (turnNum==9) {
+      if ((cell1===cell2===cell3)||
+      (cell4===cell5===cell6) ||
+      (cell7===cell8===cell9) ||
+      (cell1===cell4===cell7) ||
+      (cell2===cell5===cell8) ||
+      (cell3===cell6===cell9) ||
+      (cell1===cell5===cell9) ||
+      (cell3===cell5===cell7)) {
+        console.log(cell1 +" won");
+      }
+      else {
+        console.log("match ended in draw")
+      }}
+      else {
+        //can you leave out the else part?
+      }
+    }
+    </script>
+
+  </body>
+</html>
+
+<!-- document.querySelectorAll("h2, #some-id, .some-class"); // grab elements using CSS selectors. returns an array
+document.querySelector("h2, #some-id, .some-class"); // grab the first matching element, also using CSS selectors.
+returns a single node instead of an array
+document.getElementsByTagName("p"); // grab elements by searching for an element tag. returns an array
+document.getElementById("some-id"); // grab one specific element using its ID. returns a single node
+document.getElementsByClassName("some-class"); // grab any elements that are using the specified class. returns an array -->
