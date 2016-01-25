@@ -4,12 +4,12 @@
     <meta charset="utf-8">
     <title>Tic Tac Toe</title>
     <link rel="stylesheet" href="./css/ticStyle.css">
-    <script type="text/javascript" src="js/ticScript.js"> </script>
+
   </head>
   <body>
     <h1>Tic Tac Toe! by Sarah Fouzia Choudhury</h1>
     <h2>Player X goes first</h1>
-    <div>
+    <div id="board">
       <div id="cell1" class="square"></div>
       <div id="cell2" class="square"></div>
       <div id="cell3" class="square"></div>
@@ -20,7 +20,9 @@
       <div id="cell8" class="square"></div>
       <div id="cell9" class="square"></div>
     </div>
-
+    <script type="text/javascript" src="js/ticScript.js"> </script>
+    <!-- if you put the above at the top of the document, it tries to run it before
+    the divs have been created, so all selectors and getElementById -->
     <script>
     // remember, with the DOM, these query selectors must be in the html document
     // they can't be part of an external javascript file as it is not part of the
@@ -60,6 +62,7 @@
         //why does turnXO(turnNum) not work above?
         this.style.background="blue";
         turnNum +=1;
+        turnXO(turnNum);
 
         //you can't use cellsQueryAll[i] instead of 'this'
         //because the loop will keep on running and output the last value,
@@ -78,6 +81,10 @@
       (cell3===cell6===cell9) ||
       (cell1===cell5===cell9) ||
       (cell3===cell5===cell7)) {
+        //you can't check for equality of 3 at a time, only 2 at a time
+        // so check (a==b and b==c) or
+        //        (d==e) and (d==f) or
+        //
         console.log(cell1 +" won");
       }
       else {
