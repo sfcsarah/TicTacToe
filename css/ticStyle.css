@@ -20,6 +20,9 @@ div {
   font-size: 55px;
   text-align: center;
 }
+.blue {
+  background-color: blue;
+}
 #cell4 {
   clear:left;
 }
